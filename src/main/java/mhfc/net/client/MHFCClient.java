@@ -73,5 +73,25 @@ public class MHFCClient extends ProxyBase {
 		EntityPaintParticleEmitter paintEmitter = (EntityPaintParticleEmitter) emitter;
 
 		Minecraft.getMinecraft().effectRenderer.addEffect(paintEmitter.createPaintParticle());
+		
+	@Override
+public void generateDeviljhoLBParticle(Entity theEntity)
+{
+    double motionX = theEntity.worldObj.rand.nextGaussian() * 0.02D;
+    double motionY = theEntity.worldObj.rand.nextGaussian() * 0.02D;
+    double motionZ = theEntity.worldObj.rand.nextGaussian() * 0.02D;
+    EntityFX particleDevilJhoLB = new DeviljhoLaserbeamFX(
+          theEntity.worldObj, 
+          theEntity.posX + theEntity.worldObj.rand.nextFloat() * theEntity.width 
+                * 2.0F - theEntity.width, 
+          theEntity.posY + 0.5D + theEntity.worldObj.rand.nextFloat() 
+                * theEntity.height, 
+          theEntity.posZ + theEntity.worldObj.rand.nextFloat() * theEntity.width 
+                * 2.0F - theEntity.width, 
+          motionX, 
+          motionY, 
+          motionZ);
+    Minecraft.getMinecraft().effectRenderer.addEffect(particleMysterious);        
+}
 	}
 }
