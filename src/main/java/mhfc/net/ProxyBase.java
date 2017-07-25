@@ -15,4 +15,6 @@ public abstract class ProxyBase {
 	public void spawnPaintBallParticle(EnumParticleType type, EntityParticleEmitter emitter) {}
 
 	public void spawnParticle(EnumParticleType types, double x, double y, double z, Object... info) {}
+	
+	public void generateDeviljhoLBParticle(Entity theEntity) { }
 }
